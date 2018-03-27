@@ -7,8 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
-Genre.delete_all
+GamePlatform.delete_all
+Platform.delete_all
 Game.delete_all
+Genre.delete_all
+
+
 
 csv_wards = File.read(Rails.root.join('db', 'game.csv'))
 csv = CSV.parse(csv_wards, :headers => true, :encoding => 'ISO-8859-1')
@@ -19,7 +23,6 @@ csv.each do |row|
     t.name = row[3]
     t.save
 
-
     x = Game.new
     x.name = row[0]
     x.year = row[2]
@@ -29,4 +32,14 @@ csv.each do |row|
     x.genre_id = t.id
     x.save
     puts "#{x.name}.#{t.name}.........  saved"
+
+    y = Platform.new
+    y.name = row[1]
+    y.save
+
+    z = GamePlatform.new
+    z.platform_id = y.id
+    z.game_id = x.id
+
+
 end
