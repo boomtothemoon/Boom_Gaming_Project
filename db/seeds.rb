@@ -23,23 +23,26 @@ csv.each do |row|
     t.name = row[3]
     t.save
 
+    y = Platform.new
+    y.name = row[1]
+    y.save
+
     x = Game.new
     x.name = row[0]
     x.year = row[2]
     x.publisher = row[4]
     x.developer = row[5]
     x.rating = row[6]
+    x.platform_id = y.id
     x.genre_id = t.id
     x.save
     puts "#{x.name}.#{t.name}.........  saved"
 
-    y = Platform.new
-    y.name = row[1]
-    y.save
-
-    z = GamePlatform.new
-    z.platform_id = y.id
-    z.game_id = x.id
+   # z = GamePlatform.new
+   # z.game_name = x.name
+    #z.platform_name = y.name
+   # z.platform_id = y.id
+   # z.game_id = x.id
 
 
 end

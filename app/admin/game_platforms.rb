@@ -12,4 +12,7 @@ ActiveAdmin.register GamePlatform do
 #   permitted
 # end
 
+
+permit_params :game_name, :platform_name, :game_id, :platform_id
+
 end

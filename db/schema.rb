@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327074926) do
+ActiveRecord::Schema.define(version: 20180327093003) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20180327074926) do
     t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "game_name"
+    t.string "platform_name"
     t.index ["game_id"], name: "index_game_platforms_on_game_id"
     t.index ["platform_id"], name: "index_game_platforms_on_platform_id"
   end
@@ -61,7 +63,9 @@ ActiveRecord::Schema.define(version: 20180327074926) do
     t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "platform_id"
     t.index ["genre_id"], name: "index_games_on_genre_id"
+    t.index ["platform_id"], name: "index_games_on_platform_id"
   end
 
   create_table "genres", force: :cascade do |t|

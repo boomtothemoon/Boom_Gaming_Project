@@ -1,5 +1,4 @@
 class Platform < ApplicationRecord
-    has_many :gameplatforms
-    has_many :games, through: :gameplatforms
+    has_many :games
     validates :name, presence: true
 end
