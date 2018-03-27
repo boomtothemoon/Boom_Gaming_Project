@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  get 'games/index'
+#GET /board_games
+#GET /
 
-  get 'games/show'
+#get 'games', to: 'games#index'
+#get 'games/:id', to: 'games#show'
+
+resources :games, only: [:index, :show]
+
+root to: 'games#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

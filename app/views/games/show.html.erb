@@ -1,2 +1,30 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+
+    <h2><%= @games.name %></h2>
+    <p>
+        <strong>Platform</strong>
+        <%= @games.platform.name %>
+    </p>
+        <p>
+        <strong>Year</strong>
+        <%= @games.year %>
+    </p>
+
+    <p>
+        <strong>Genre</strong>
+        <%= @games.genre.name %>
+    </p>
+
+    <p>
+        <strong>Publisher</strong>
+        <%= @games.publisher %>
+    </p>
+
+    <p>
+        <strong>Developer</strong>
+        <%= @games.developer %>
+    </p>
+
+    <p>
+        <strong>Rating</strong>
+        <%= @games.rating %>
+    </p>

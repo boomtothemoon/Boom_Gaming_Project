@@ -1,2 +1,35 @@
-<h1>Games#index</h1>
+<h1>Games</h1>
 <p>Find me in app/views/games/index.html.erb</p>
+
+<% @games.each do |game| %>
+    <h2><%= game.name %></h2>
+    <p>
+        <strong>Platform</strong>
+        <%= game.platform %>
+    </p>
+        <p>
+        <strong>Year</strong>
+        <%= game.year %>
+    </p>
+
+    <p>
+        <strong>Genre</strong>
+        <%= game.genre %>
+    </p>
+
+    <p>
+        <strong>Publisher</strong>
+        <%= game.publisher %>
+    </p>
+
+    <p>
+        <strong>Developer</strong>
+        <%= game.developer %>
+    </p>
+
+    <p>
+        <strong>Rating</strong>
+        <%= game.rating %>
+    </p>
+<%end%>
+
