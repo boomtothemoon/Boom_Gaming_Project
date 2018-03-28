@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+require 'faker'
 
 GamePlatform.delete_all
 Platform.delete_all
@@ -27,12 +28,18 @@ csv.each do |row|
     y.name = row[1]
     y.save
 
+
+    numberFaker = (rand() * 100).round(2)
+    puts "#{numberFaker}.........  generated"
+    
+
     x = Game.new
     x.name = row[0]
     x.year = row[2]
     x.publisher = row[4]
     x.developer = row[5]
     x.rating = row[6]
+    x.price = numberFaker
     x.platform_id = y.id
     x.genre_id = t.id
     x.save

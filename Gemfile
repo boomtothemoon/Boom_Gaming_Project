@@ -43,7 +43,7 @@ end
 
 gem 'activeadmin'
 gem 'devise'
-gem 'will_paginate'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

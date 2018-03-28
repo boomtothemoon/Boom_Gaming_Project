@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327093003) do
+ActiveRecord::Schema.define(version: 20180327195741) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 20180327093003) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.integer "phone_number"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "game_platforms", force: :cascade do |t|
     t.integer "platform_id"
     t.integer "game_id"
@@ -64,6 +71,8 @@ ActiveRecord::Schema.define(version: 20180327093003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "platform_id"
+    t.decimal "price"
+    t.string "image"
     t.index ["genre_id"], name: "index_games_on_genre_id"
     t.index ["platform_id"], name: "index_games_on_platform_id"
   end
