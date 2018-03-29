@@ -12,6 +12,6 @@ class GamesController < ApplicationController
     @keywork_terms = params[:q]
 
     #@searches = Game.where(name: @keywork_terms)
-    @searches = Game.where("name LIKE ?", "%#{@keywork_terms}%") 
+    @games = Game.where("name LIKE ?", "%#{@keywork_terms}%").page(params[:page]).per(10)
   end
 end

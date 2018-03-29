@@ -8,6 +8,10 @@
  <div class="col-sm-12">
   <div class="panel panel-default">
     <div class="panel-body">
+
+
+
+
     <div class="pull-right">
     <%= form_tag(games_search_path, method: "get") do %>
       <%= label_tag(:q, "Search for:") %>
@@ -16,34 +20,9 @@
     <% end %>
     <br/>
     </div>
-      <table role='datatable' id="games" class="table table-striped table-hover table-responsive">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Platform</th>
-            <th>Year</th>
-            <th>Genre</th>
-            <th>Publisher</th>
-            <th>Developer</th>
-            <th>Rating</th>
-            <th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @games.each do |game| %>
-            <tr>
-              <td><%= game.name%></td>
-              <td><%= game.platform.name %></td>
-              <td><%= game.year %></td>
-              <td><%= game.genre.name %></td>
-              <td><%= game.publisher %></td>
-              <td><%= game.developer %></td>
-              <td><%= game.rating %></td>
-              <td><button type="button" class="btn btn-outline btn-xs pull-right"><%= link_to 'View Details', game %></button></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+
+
+      <%= render "games/game"%>
       <div class="pull-right">
         <%= paginate @games %>
         <%= page_entries_info @games %>

@@ -1,29 +1,31 @@
-<h2><%= games.name %></h2>
-<p>
-    <strong>Platform</strong>
-    <%= games.platform.name %>
-</p>
-    <p>
-    <strong>Year</strong>
-    <%= games.year %>
-</p>
-
-<p>
-    <strong>Genre</strong>
-    <%= games.genre.name %>
-</p>
-
-<p>
-    <strong>Publisher</strong>
-    <%= games.publisher %>
-</p>
-
-<p>
-    <strong>Developer</strong>
-    <%= games.developer %>
-</p>
-
-<p>
-    <strong>Rating</strong>
-    <%= games.rating %>
-</p>
+           
+           
+           
+            <table class="table table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Platform</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Publisher</th>
+                    <th>Developer</th>
+                    <th>Rating</th>
+                    <th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @games.each do |search|%>
+                    <tr>
+                    <td><%= search.name%></td>
+                    <td><%= search.platform.name %></td>
+                    <td><%= search.year %></td>
+                    <td><%= search.genre.name %></td>
+                    <td><%= search.publisher %></td>
+                    <td><%= search.developer %></td>
+                    <td><%= search.rating %></td>
+                    <td><button type="button" class="btn btn-outline btn-xs pull-right"><%= link_to 'View Details', search %></button></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
