@@ -1,2 +1,24 @@
-<h1>Welcome#contact</h1>
-<p>Find me in app/views/welcome/contact.html.erb</p>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Contacts</h1>
+  </div>
+</div>
+<div>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <div>
+            <h4>For any questions, contact our customer service!</h4>
+        </div>
+                <div>
+                    <p><strong>Email: </strong><%= @contacts.email%><p>
+                    <p><strong>Phone Number: </strong><%= @contacts.phone_number%><p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

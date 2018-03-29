@@ -1,2 +1,21 @@
-<h1>Welcome#about</h1>
-<p>Find me in app/views/welcome/about.html.erb</p>
+<div class="row">
+  <div class="col-sm-12">
+    <h1>About Us</h1>
+  </div>
+</div>
+<div>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+                <div>
+                    <p><strong><h5>How We Started:</h5> </strong><%= @abouts.description%><p>
+                    <p><small><strong>Doing Magical Stuff Since <%= @abouts.yearStarted%></strong></small><p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

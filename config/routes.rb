@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'contacts/index'
+
+  get 'contacts/show'
+
   get 'welcome/index' => 'welcome#index'
   get 'welcome/about' => 'welcome#about'
   get 'welcome/contact' => 'welcome#contact'
@@ -8,6 +12,9 @@ Rails.application.routes.draw do
 
   get 'games/index' => 'games#index'
   get 'games/show' => 'games#show'
+  get 'games/search' => 'games#search'
+
+  get 'contacts/index' => 'contacts#index'
 
 #GET /board_games
 #GET /
@@ -15,7 +22,7 @@ Rails.application.routes.draw do
 #get 'games', to: 'games#index'
 #get 'games/:id', to: 'games#show'
 
-#resources :games, only: [:index, :show]
+resources :games, only: [:index, :show]
 
 root to: 'welcome#index'
 
