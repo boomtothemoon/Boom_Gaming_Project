@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
-  get 'welcome/about'
+  get 'welcome/index' => 'welcome#index'
+  get 'welcome/about' => 'welcome#about'
+  get 'welcome/contact' => 'welcome#contact'
+  get 'welcome/games' => 'welcome#games'
+  get 'welcome/login' => 'welcome#login'
 
-  get 'welcome/contact'
-
-  get 'welcome/games'
-
-  get 'welcome/login'
+  get 'games/index' => 'games#index'
+  get 'games/show' => 'games#show'
 
 #GET /board_games
 #GET /
@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 #get 'games', to: 'games#index'
 #get 'games/:id', to: 'games#show'
 
-resources :games, only: [:index, :show]
+#resources :games, only: [:index, :show]
 
-root to: 'games#index'
+root to: 'welcome#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
