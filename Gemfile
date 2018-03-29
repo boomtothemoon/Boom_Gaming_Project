@@ -46,6 +46,7 @@ gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.

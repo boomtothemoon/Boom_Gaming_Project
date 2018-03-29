@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
+  get 'welcome/about'
+
+  get 'welcome/contact'
+
+  get 'welcome/games'
+
+  get 'welcome/login'
+
 #GET /board_games
 #GET /
 
