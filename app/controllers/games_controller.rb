@@ -14,4 +14,11 @@ class GamesController < ApplicationController
     #@searches = Game.where(name: @keywork_terms)
     @games = Game.where("name LIKE ?", "%#{@keywork_terms}%").page(params[:page]).per(10)
   end
+
+  def search_by_platform
+    @keywork_terms = params[:name]
+
+    #@searches = Game.where(name: @keywork_terms)
+    @games = Game.where("platform_id == ?", @keywork_terms).page(params[:page]).per(10)
+  end
 end

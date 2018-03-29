@@ -1,0 +1,5 @@
+<% @platforms.distinct().select(:name).each do |search|%>
+    <ul>
+    <li><%= link_to search.name, controller: "games", action: "search_by_platform", name: search.name%></li>
+    </ul>
+<% end %>

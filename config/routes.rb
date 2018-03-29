@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   get 'contacts/index'
 
   get 'contacts/show'
@@ -13,6 +15,9 @@ Rails.application.routes.draw do
   get 'games/index' => 'games#index'
   get 'games/show' => 'games#show'
   get 'games/search' => 'games#search'
+  get 'games/search_by_platform' => 'games#search_by_platform'
+
+  get 'platforms/index' => 'platforms#index'
 
   get 'contacts/index' => 'contacts#index'
 
