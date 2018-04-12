@@ -1,6 +1,6 @@
 class PlatformsController < ApplicationController
   def index
-    @platforms = Platform.order(:name)
+    @platforms = Platform.order(:name).page(params[:page]).per(10)
   end
 
   def show
@@ -11,6 +11,13 @@ class PlatformsController < ApplicationController
     @keywork_terms = params[:q]
 
     #@searches = Game.where(name: @keywork_terms)
-    @games = Game.where("name LIKE ?", "%#{@keywork_terms}%").page(params[:page]).per(10)
+    @games = Game.where("platform_name LIKE ?", "%#{@keywork_terms}%").page(params[:page]).per(10)
+  end
+
+  def search_by_platform
+    @keywork_terms = params[:name]
+
+    #@searches = Game.where(name: @keywork_terms)
+    @games = Platform.where("name == ?", @keywork_terms).page(params[:page]).per(10)
   end
 end

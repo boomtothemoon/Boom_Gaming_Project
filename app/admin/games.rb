@@ -12,6 +12,6 @@ ActiveAdmin.register Game do
 #   permitted
 # end
 
-permit_params :name, :year, :publisher, :developer, :rating, :genre_id, :platform_id
+permit_params :name, :year, :publisher, :developer, :rating, :genre_id, :platform_id, :image, :platform_name
 
 end

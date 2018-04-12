@@ -1,0 +1,19 @@
+<h1>Search Result</h1>
+<div class="row">
+ <div class="col-sm-12">
+  <div class="panel panel-default">
+    <div class="panel-body">
+        <% if  @games.size <= 0 %>
+            <h3><p> No Result Found</p></h3>
+        <% else %> 
+                <%= render "games/game"%>
+                <div class="pull-right">
+            <%= paginate @games %>
+            <%= page_entries_info @games %>
+      <br/>
+    </div>
+        <% end %>
+    </div>
+</div>
+</div>
+</div>

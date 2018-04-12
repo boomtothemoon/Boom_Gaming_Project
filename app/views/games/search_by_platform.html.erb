@@ -1,6 +1,10 @@
-<% @games.each do |search|%>
-    <tr>
-    <td><%= search.name%></td>
 
-    </tr>
-<% end %>
+
+
+
+<%= render "games/game"%>
+<div class="pull-right">
+<%= paginate @games %>
+<%= page_entries_info @games %>
+<br/>
+</div>

@@ -8,7 +8,6 @@
 #AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 require 'faker'
 
-GamePlatform.delete_all
 Platform.delete_all
 Game.delete_all
 Genre.delete_all
@@ -41,6 +40,7 @@ csv.each do |row|
     x.rating = row[6]
     x.price = numberFaker
     x.platform_id = y.id
+    x.platform_name = y.name
     x.genre_id = t.id
     x.save
     puts "#{x.name}.#{t.name}.........  saved"

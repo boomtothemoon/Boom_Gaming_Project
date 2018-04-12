@@ -5,6 +5,7 @@
                 <thead>
                 <tr>
                     <th>Name</th>
+                    <th></th>
                     <th>Platform</th>
                     <th>Year</th>
                     <th>Genre</th>
@@ -18,6 +19,7 @@
                 <% @games.each do |search|%>
                     <tr>
                     <td><%= search.name%></td>
+                    <td><%= image_tag search.image.thumb%></td>
                     <td><%= search.platform.name %></td>
                     <td><%= search.year %></td>
                     <td><%= search.genre.name %></td>

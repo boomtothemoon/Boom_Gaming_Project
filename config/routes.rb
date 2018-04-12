@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   get 'games/search' => 'games#search'
   get 'games/search_by_platform' => 'games#search_by_platform'
 
+  get 'platforms/search_by_platform' => 'platforms#search_by_platform'
+  get 'platforms/search_by_platform_name' => 'platforms#search_by_platform_name'
   get 'platforms/index' => 'platforms#index'
+  get 'platforms/search' => 'platforms#search'
 
   get 'contacts/index' => 'contacts#index'
 
