@@ -1,0 +1,41 @@
+
+            <table class="table table-striped table-hover table-responsive">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th></th>
+                    <th>Platform</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Publisher</th>
+                    <th>Developer</th>
+                    <th>Rating</th>
+                    <th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @games.where("status == ?", "On Sale").each do |search|%>
+                    <tr>
+                    <td><%= search.name%></td>
+                    <td>
+                    <% if search.status == "New" %>
+                     <span class="label label-success">New</span>
+                    <% elsif search.status == "On Sale" %>
+                     <span class="label label-danger">On Sale</span>
+                    <% elsif search.status == "Recently Updated" %>
+                     <span class="label label-warning">Recently Updated</span>
+                    <% end %>
+                    </td>
+                    <td><%= image_tag search.image.thumb%></td>
+                    <td><%= search.platform.name %></td>
+                    <td><%= search.year %></td>
+                    <td><%= search.genre.name %></td>
+                    <td><%= search.publisher %></td>
+                    <td><%= search.developer %></td>
+                    <td><%= search.rating %></td>
+                    <td><button type="button" class="btn btn-outline btn-xs pull-right"><%= link_to 'View Details', search %></button></td>
+                    </tr>
+                <% end %>
+                </tbody>
+            </table>
