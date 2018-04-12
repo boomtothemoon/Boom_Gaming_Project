@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412012349) do
+ActiveRecord::Schema.define(version: 20180412191852) do
 
   create_table "abouts", force: :cascade do |t|
     t.text "description"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20180412012349) do
     t.decimal "price"
     t.string "image"
     t.string "platform_name"
+    t.string "status"
     t.index ["genre_id"], name: "index_games_on_genre_id"
     t.index ["platform_id"], name: "index_games_on_platform_id"
   end
