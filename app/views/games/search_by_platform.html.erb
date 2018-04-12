@@ -1,6 +1,7 @@
 
-
-
+<% if flash[:message]  %>
+    <p><%= flash[:message] %></p>
+<% end %>
 
 <%= render "games/game"%>
 <div class="pull-right">

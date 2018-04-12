@@ -25,6 +25,8 @@ class GamesController < ApplicationController
   def search_by_platform
     @keywork_terms = params[:name]
 
+ 
+    flash[:message] = "You Searched for: #{@keywork_terms}"
     #@searches = Game.where(name: @keywork_terms)
     @games = Game.where("platform_name == ?", @keywork_terms).page(params[:page]).per(10)
 
