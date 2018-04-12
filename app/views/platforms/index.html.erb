@@ -1,5 +1,10 @@
 
 
+<% content_for :left do %>
+    <ol class="breadcrumb">
+        <li><a class="btn disabled btn-outline btn-xs btn-default" href=""><%= flash[:breadcrumbDirectory] %></a></li>
+    </ol>
+<% end %>
 <div class="pull-right">
     <%= form_tag(platforms_search_path, method: "get") do %>
         <%= label_tag(:q, "Search for:") %>

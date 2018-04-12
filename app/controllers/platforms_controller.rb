@@ -1,5 +1,7 @@
 class PlatformsController < ApplicationController
   def index
+    flash[:breadcrumbDirectory] = "Platform"
+
     @platforms = Platform.order(:name).page(params[:page]).per(10)
   end
 

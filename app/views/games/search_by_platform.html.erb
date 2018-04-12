@@ -1,7 +1,9 @@
 
-<% if flash[:message]  %>
-    <p><%= flash[:message] %></p>
-<% end %>
+<ol class="breadcrumb">
+    <li><button class="btn btn-outline btn-xs btn-default"><%= link_to "Platforms" , controller: "platforms", action: "index"%></button></li>
+
+    <li><a class="btn btn-outline btn-xs btn-default disabled" href=""><%= flash[:breadcrumbDirectory] %></a></a></li>
+</ol>
 
 <%= render "games/game"%>
 <div class="pull-right">

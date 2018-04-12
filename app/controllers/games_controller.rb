@@ -6,6 +6,8 @@ class GamesController < ApplicationController
 
   def show
     @games = Game.find(params[:id])
+    flash[:breadcrumbDirectory] = "#{@games.name}"
+    flash[:breadcrumbDirectoryBefore] = "#{@games.platform_name}"
   end
 
   def search
@@ -25,8 +27,7 @@ class GamesController < ApplicationController
   def search_by_platform
     @keywork_terms = params[:name]
 
- 
-    flash[:message] = "You Searched for: #{@keywork_terms}"
+    flash[:breadcrumbDirectory] = "#{@keywork_terms}"
     #@searches = Game.where(name: @keywork_terms)
     @games = Game.where("platform_name == ?", @keywork_terms).page(params[:page]).per(10)
 
