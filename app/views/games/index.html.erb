@@ -1,37 +1,147 @@
-<div class="row">
-  <div class="col-sm-12">
-    <h1>Game List</h1>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">All</a></li>
+  <li><a data-toggle="tab" href="#menu1">New</a></li>
+  <li><a data-toggle="tab" href="#menu2">On Sale</a></li>
+    <li><a data-toggle="tab" href="#menu3">Recently Updated</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+
+
+
+        <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="pull-right">
+            <%= form_tag(games_search_path, method: "get") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+            <% end %>
+            <br/>
+            </div>
+
+
+              <%= render "games/game"%>
+              <div class="pull-right">
+                <%= paginate @games %>
+                <%= page_entries_info @games %>
+              <br/>
+            </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+  </div>
+  <div id="menu1" class="tab-pane fade">
+
+        <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="pull-right">
+            <%= form_tag(games_search_path, method: "get") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+            <% end %>
+            <br/>
+            </div>
+
+
+              <%= render "games/gameNew"%>
+              <div class="pull-right">
+                <%= paginate @games %>
+                <%= page_entries_info @games %>
+              <br/>
+            </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+
+
+  </div>
+  <div id="menu2" class="tab-pane fade">
+
+        <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="pull-right">
+            <%= form_tag(games_search_path, method: "get") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+            <% end %>
+            <br/>
+            </div>
+
+
+              <%= render "games/gameOnSale"%>
+              <div class="pull-right">
+                <%= paginate @games %>
+                <%= page_entries_info @games %>
+              <br/>
+            </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+
+
+
+  </div>
+    <div id="menu3" class="tab-pane fade">
+
+        <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+            <div class="pull-right">
+            <%= form_tag(games_search_path, method: "get") do %>
+              <%= label_tag(:q, "Search for:") %>
+              <%= text_field_tag(:q) %>
+              <%= submit_tag("Search") %>
+            <% end %>
+            <br/>
+            </div>
+
+
+              <%= render "games/gameUpdated"%>
+              <div class="pull-right">
+                <%= paginate @games %>
+                <%= page_entries_info @games %>
+              <br/>
+            </div>
+
+            </div>
+          </div>
+        </div>
+        </div>
+
+
+
+
+
   </div>
 </div>
 
-<div class="row">
- <div class="col-sm-12">
-  <div class="panel panel-default">
-    <div class="panel-body">
-    <div class="pull-right">
-    <%= form_tag(games_search_path, method: "get") do %>
-      <%= label_tag(:q, "Search for:") %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag("Search") %>
-    <% end %>
-    <br/>
-    </div>
-
-
-      <%= render "games/game"%>
-      <div class="pull-right">
-        <%= paginate @games %>
-        <%= page_entries_info @games %>
-      <br/>
-    </div>
-
-    </div>
-  </div>
- </div>
-</div>
 
 
 
 
-</div>
+
+
 

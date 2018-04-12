@@ -3,3 +3,4 @@ class AddStatusToGames < ActiveRecord::Migration[5.1]
     add_column :games, :status, :string
   end
 end
+g

@@ -12,7 +12,7 @@ Platform.delete_all
 Game.delete_all
 Genre.delete_all
 
-
+@countries = ["New" ,"On Sale", "Recently Updated", ""]
 
 csv_wards = File.read(Rails.root.join('db', 'game.csv'))
 csv = CSV.parse(csv_wards, :headers => true, :encoding => 'ISO-8859-1')
@@ -42,8 +42,16 @@ csv.each do |row|
     x.platform_id = y.id
     x.platform_name = y.name
     x.genre_id = t.id
+    x.status = @countries.sample
     x.save
     puts "#{x.name}.#{t.name}.........  saved"
+    puts "#{x.status}........  saved"
+
+
+
+
+
+
 
    # z = GamePlatform.new
    # z.game_name = x.name
