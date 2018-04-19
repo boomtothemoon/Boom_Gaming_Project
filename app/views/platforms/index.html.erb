@@ -6,12 +6,18 @@
     </ol>
 <% end %>
 <div class="pull-right">
-    <%= form_tag(platforms_search_path, method: "get") do %>
-        <%= label_tag(:q, "Search for:") %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Search") %>
-    <% end %>
-    <br/>
+
+
+
+
+
+<%= form_tag(platforms_search_path, method: "get") do %>
+    <%= collection_select(:x, :platform_id, @platforms.distinct().select(:name), :name, :name) %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+<% end %>
+
 </div>
 <table class="table table-striped table-hover table-responsive">
     <thead>

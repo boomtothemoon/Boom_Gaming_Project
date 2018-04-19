@@ -6,9 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
-    <nav class="navbar navbar-default">
+  </head>
+  <body style="padding:20px">
+      <nav class="navbar navbar-default">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -31,11 +31,6 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-
-
-  </head>
-  <body style="padding:20px">
   <div id="breadcrumb">
       <%= yield :left %>
   </div>

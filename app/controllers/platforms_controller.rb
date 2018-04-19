@@ -11,9 +11,10 @@ class PlatformsController < ApplicationController
 
   def search
     @keywork_terms = params[:q]
+    @text_box =  params[:x][:platform_id]
 
     #@searches = Game.where(name: @keywork_terms)
-    @games = Game.where("platform_name LIKE ?", "%#{@keywork_terms}%").page(params[:page]).per(10)
+    @games = Game.where("platform_name LIKE ? AND name LIKE ?", "%#{@text_box}%", "%#{@keywork_terms}%").page(params[:page]).per(10)
   end
 
   def search_by_platform
